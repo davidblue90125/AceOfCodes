@@ -10,3 +10,4 @@ window.addEventListener("load", () => {        // Run after the page finishes lo
   newRound();                                   // Deal the first round.
 
 resetBtn.addEventListener("click", newRound); // Clicking Reset starts a fresh round.
+})

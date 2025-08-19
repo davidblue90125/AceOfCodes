@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <main>
+    <!-- Dealer cards area with hidden placeholder -->
+    <div id="dealer-cards" class="d-flex flex-wrap gap-2 justify-content-center" aria-label="Dealer cards">
+        <img id="hidden" src="assets/cards/BACK.png" alt="Face-down card" />
+    </div>
+
+    <!-- Player cards area (empty on load) -->
+    <div id="your-cards" class="d-flex flex-wrap gap-2 justify-content-center" aria-label="Your cards"></div>
+
+    <!-- Reset button (to start a new round) -->
+    <button id="reset" type="button" class="btn btn-outline-light px-4">Reset</button>
     
 </body>
 </html>

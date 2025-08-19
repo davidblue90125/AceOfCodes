@@ -6,67 +6,82 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BlackJack</title>
 
-        <!-- BOOTSTRAP LINK-->
+        <!-- BOOTSTRAP LINK -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
             crossorigin="anonymous">
 
+        <!-- CSS LINK -->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
+        <!-- JAVASCRIPT LINK -->
+         <script defer src="assets/js/script.js"></script>
     </head>
+
 
     <body>
 
-        <!-- HEADER: BLACKJACK -->
-        <header>
+        <!-- HEADER -->
+        <header class="py-4 text-center" role="banner">
             <h1>BlackJack</h1>
         </header>
 
 
-        <!-- MAIN CONTENT: GAME AREA -->
-        <main>
-            <!-- DEALER SECTION -->
-            <section>
-                <div>
-                    <h2 id="dealer-heading"> Dealer: [SUM]</h2>
+        <!-- MAIN SECTION: GAME AREA-->
+        <main id="game" class="container pb-4" role="main">
+            <div class="row g-4">
+
+            <!-- DEALER PANEL -->
+            <section class="col-12 col-lg-6" aria-labelledby="dealer-heading">
+                <div id="dealer-heading">
+                    <h2>Dealer:[SUM]</h2>
                 </div>
 
-                <div id="dealer-cards">
-                    <p> dealer cards go here</p>
+                <div id="dealer-cards" class="d-flex flex-wrap gap-2 justify-content-center" aria-label="Dealer cards">
+                    <p>dealer cards go here</p>
                 </div>
             </section>
 
 
-            <!-- PLAYER SECTION -->
-            <section>
-                <div>
-                    <h2 id="player-heading">Player: [SUM]</h2>
+            <!-- PLAYER PANNEL -->
+            <section class="col-12 col-lg-6" aria-labelledby="player-heading">
+                <div id="player-heading">
+                    <h2>Player:[SUM]</h2>
                 </div>
 
                 <div id="your-cards">
-                    <p>your cards go here</p>
+                    <p>player cards go here</p>
                 </div>
+
             </section>
 
+            <!-- GAME BUTTONS AND TALLY -->
+            <section class="col-12" aria-label="Controls and game status">
+                <div class="card bg-gradient-dark shadow rounded-4 p-3 text-center">
+                 <!-- Game buttoms -->
+                <div>
+                    <button>hit button</button>
+                    <button>Stay button</button>
+                    <button>reset button</button>
+                </div>
 
-            <!-- GAME BUTTONS -->
-            <section>
-                <p> Buttons Section </p>
-            </section>
+            <!-- Tally -->
+                <p>tally goes here</p>
 
+                </div>
+             </section>
 
-            <!-- SCORE TALLY -->
-            <section>
-                <p>Score Tally Section</p>
-            </section>
-
+            </div>
         </main>
 
 
-
         <!-- FOOTER -->
-        <footer>
-            <p>Footer content</p>
+        <footer  class="text-center text-secondary pb-4" role="contentinfo">
+            Footer Content
         </footer>
 
+        <!-- BOOTSTRAP JS LINK -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
     </body>
 
 </html>

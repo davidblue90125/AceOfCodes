@@ -21,27 +21,29 @@
     <body>
 
         <!-- HEADER -->
-        <header>
+        <header class="py-4 text-center" role="banner">
             <h1>BlackJack</h1>
         </header>
 
 
         <!-- MAIN SECTION: GAME AREA-->
-        <main>
+        <main id="game" class="container pb-4" role="main">
+            <div class="row g-4">
+
             <!-- DEALER PANEL -->
-            <section>
+            <section class="col-12 col-lg-6" aria-labelledby="dealer-heading">
                 <div id="dealer-heading">
                     <h2>Dealer:[SUM]</h2>
                 </div>
 
-                <div id="dealer-cards">
+                <div id="dealer-cards" class="d-flex flex-wrap gap-2 justify-content-center" aria-label="Dealer cards">
                     <p>dealer cards go here</p>
                 </div>
             </section>
 
 
             <!-- PLAYER PANNEL -->
-            <section>
+            <section class="col-12 col-lg-6" aria-labelledby="player-heading">
                 <div id="player-heading">
                     <h2>Player:[SUM]</h2>
                 </div>
@@ -52,20 +54,28 @@
 
             </section>
 
-            <!-- GAME BUTTONS-->
-             <section>
+            <!-- GAME BUTTONS AND TALLY -->
+            <section class="col-12" aria-label="Controls and game status">
+                <div class="card bg-gradient-dark shadow rounded-4 p-3 text-center">
+                 <!-- Game buttoms -->
+                <div>
+                    <button>hit button</button>
+                    <button> Stay button</button>
+                    <button>reset button</button>
+                </div>
 
+            <!-- Tally -->
+                <p>tally goes here</p>
+
+                </div>
              </section>
 
-            <!-- SCORE TALLY -->
-             <section>
-
-             </section>
+            </div>
         </main>
 
 
         <!-- FOOTER -->
-        <footer>
+        <footer  class="text-center text-secondary pb-4" role="contentinfo">
             Footer Content
         </footer>
 

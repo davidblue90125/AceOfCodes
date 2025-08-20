@@ -36,11 +36,11 @@
             <!-- DEALER PANEL -->
             <section class="col-12 col-lg-6" aria-labelledby="dealer-heading">
                 <div id="dealer-heading">
-                    <h2>Dealer:[SUM]</h2>
+                <h2>Dealer <span id="dealer-sum" class="fw-bold text-success" aria-live="polite"></span></h2>
                 </div>
 
                 <div id="dealer-cards" class="d-flex flex-wrap gap-2 justify-content-center" aria-label="Dealer cards">
-                    <p>dealer cards go here</p>
+                    <img id="hidden" src="assets/cards/BACK.png" alt="Face-down card">
                 </div>
             </section>
 
@@ -48,7 +48,7 @@
             <!-- PLAYER PANNEL -->
             <section class="col-12 col-lg-6" aria-labelledby="player-heading">
                 <div id="player-heading">
-                    <h2>Player:[SUM]</h2>
+                     <h2>Player <span id="your-sum" class="fw-bold text-success" aria-live="polite"></span></h2>
                 </div>
 
                 <div id="your-cards">
@@ -62,15 +62,22 @@
                 <div class="card bg-gradient-dark shadow rounded-4 p-3 text-center">
                  <!-- Game buttoms -->
                 <div>
-                    <button id="hit">hit button</button>
-                    <button>Stay button</button>
-                    <button id="reset">reset button</button>
+                    <button id="hit">Hit</button>
+                    <button id="stay">Stay</button>
+                    <button id="reset">Reset</button>
+                    <button id="resetScore">Reset Score</button>
                 </div>
 
             <!-- Tally -->
-                <p>tally goes here</p>
+                <p id="results" class="fs-5 min-h-1" aria-live="assertive" role="status"></p>
 
-                </div>
+                <p id="tally" class="text-secondary m-0" aria-live="polite">
+                Wins: <span id="wins">0</span> •
+                Losses: <span id="losses">0</span> •
+                Ties: <span id="ties">0</span>
+                </p>    
+
+            </div>
              </section>
 
             </div>

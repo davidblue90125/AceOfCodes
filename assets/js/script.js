@@ -74,3 +74,13 @@ function drawToPlayer() {                         // Draw a single card for the 
     makeCardImg(card, "Your card")
   );
 }
+
+/* ---------- Deck & Cards ---------- */
+function buildDeck() {                             // Create a standard 52-card deck of codes.
+  const values = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]; // Card ranks.
+  const suits  = ["C","D","H","S"];               // Suits: Clubs, Diamonds, Hearts, Spades.
+  deck = [];                                      // Reset the deck array.
+  for (const s of suits)                          // For each suit…
+    for (const v of values)                       // …for each rank…
+      deck.push(`${v}-${s}`);                     // …push a code like "Q-H".
+}

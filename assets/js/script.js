@@ -117,3 +117,12 @@ function getValue(card) {                          // Nominal numeric value (Ace
 function checkAce(card) {                          // Return 1 if the card is an Ace, else 0.
   return card.startsWith("A") ? 1 : 0;             // Quick check by leading character.
 }
+
+function reduceAce(sum, aceCount) {                // Reduce some Aces 11→1 to avoid busting.
+  while (sum > 21 && aceCount > 0) {               // While we’re busting and have Aces to downgrade…
+    sum -= 10;                                     // Subtract 10 (turn 11 into 1).
+    aceCount--;                                    // Consume one available Ace reduction.
+  }
+  return sum;                                      // Return the best (highest non-busting) total.
+}
+

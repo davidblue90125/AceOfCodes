@@ -1,3 +1,6 @@
+/* ---------- State ---------- */
+let hidden;           // dealer's hidden card code, e.g. "A-S"
+
 /* ---------- DOM ---------- */
 const $ = (s) => document.querySelector(s);   // Helper: short selector function.
 
@@ -19,9 +22,6 @@ const resetScoreBtn = $("#resetScore");       // Reset scoreboard button element
 
 const hiddenImg = $("#hidden");               // <img> element for dealer’s face-down card back.
 
-
-// --- Round state you’ll use here ---
-let hidden;           // dealer's hidden card code, e.g. "A-S"
 
 /* ---------- Init ---------- */
 window.addEventListener("load", newRound);

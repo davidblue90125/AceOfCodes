@@ -92,6 +92,16 @@ function shuffleDeck() {                           // Shuffle deck in place usin
   }
 }
 
+function makeCardImg(card, labelPrefix = "Card") { // Create an <img> element for a card.
+  const img = document.createElement("img");      // Make an image element.
+  img.src = getCardImageSrc(card);                // Point to the correct PNG file.
+  img.alt = `${labelPrefix}: ${cardAlt(card)}`;   // Accessible alt text (e.g., “Your card: Ace of Spades”).
+  img.decoding = "async";                         // Hint: decode asynchronously for performance.
+  img.loading = "eager";                          // Load immediately so cards appear promptly.
+  return img;                                     // Return the ready image element.
+}
+
+
 function getValue(card) {                          // Nominal numeric value (Ace=11, face=10).
   const value = card.split("-")[0];                // Extract rank part.
   if (isNaN(value)) return value === "A" ? 11 : 10; // A=11; J/Q/K=10.

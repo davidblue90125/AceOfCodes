@@ -66,3 +66,9 @@ function newRound() {                           // Prepare and deal a brand-new 
       makeCardImg(card, "Dealer card")
     );
   }
+
+  // Player initial two
+  for (let i = 0; i < 2; i++) drawToPlayer();   // Deal two cards to the player (rendered).
+
+  
+}

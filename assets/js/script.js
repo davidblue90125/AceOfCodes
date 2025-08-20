@@ -34,3 +34,8 @@ function newRound() {
     buildDeck();
     shuffleDeck();
   }
+
+   // Dealer: hidden card (value tracked, not shown yet)
+  hidden = deck.pop();
+  dealerSum += getValue(hidden);
+  dealerAceCount += checkAce(hidden); 

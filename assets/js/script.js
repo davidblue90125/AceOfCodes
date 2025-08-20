@@ -101,7 +101,12 @@ function makeCardImg(card, labelPrefix = "Card") { // Create an <img> element fo
   return img;                                     // Return the ready image element.
 }
 
-
+function cardAlt(card) {
+  const [v, s] = card.split("-");
+  const suitName  = { C:"Clubs", D:"Diamonds", H:"Hearts", S:"Spades" }[s] || s;
+  const valueName = isNaN(v) ? (v==="A"?"Ace":v==="K"?"King":v==="Q"?"Queen":"Jack") : v;
+  return `${valueName} of ${suitName}`;
+}
 function getValue(card) {                          // Nominal numeric value (Ace=11, face=10).
   const value = card.split("-")[0];                // Extract rank part.
   if (isNaN(value)) return value === "A" ? 11 : 10; // A=11; J/Q/K=10.

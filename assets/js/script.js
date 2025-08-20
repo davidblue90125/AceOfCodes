@@ -30,15 +30,15 @@ function newRound() {                           // Prepare and deal a brand-new 
   playerNatural21 = false;                      // Reset natural blackjack flag.
   dealerCardCount = 0; playerCardCount = 0;     // Reset card counters.
 
-
-  // 4) Ensure deck exists (example)
-  if (!deck || deck.length < 15) {
-    buildDeck();
-    shuffleDeck();
+  // Ensure deck
+  if (deck.length < 15) {                       // If the deck is running low…
+    buildDeck();                                // …create a fresh 52-card deck.
+    shuffleDeck();                              // …shuffle it with Fisher–Yates.
   }
+    // Dealer hidden
+  hidden = deck.pop();                          // Take one card for the dealer (kept hidden).
+  dealerSum += getValue(hidden);                // Add its nominal value (Ace=11 for now).
+  dealerAceCount += checkAce(hidden);           // Track if the card is an Ace.
+  dealerCardCount++;                            // Count a dealer card dealt.
 
-   // Dealer: hidden card (value tracked, not shown yet)
-  hidden = deck.pop();
-  dealerSum += getValue(hidden);
-  dealerAceCount += checkAce(hidden); 
 

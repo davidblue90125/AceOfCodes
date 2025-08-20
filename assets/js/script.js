@@ -1,3 +1,5 @@
+/* ---------- Javascript ---------- */
+
 /* ---------- State ---------- */
 let hidden;           // dealer's hidden card code, e.g. "A-S"
 

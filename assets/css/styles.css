@@ -29,3 +29,9 @@
   white-space: normal;
   overflow: visible;
 }
+
+/* Keep results line height stable */
+.min-h-1 {
+  min-height: 1.5rem;
+}
+

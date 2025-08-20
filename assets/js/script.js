@@ -113,3 +113,7 @@ function getValue(card) {                          // Nominal numeric value (Ace
   if (isNaN(value)) return value === "A" ? 11 : 10; // A=11; J/Q/K=10.
   return parseInt(value, 10);                      // Number cards 2–10 parse to their int value.
 }
+
+function checkAce(card) {                          // Return 1 if the card is an Ace, else 0.
+  return card.startsWith("A") ? 1 : 0;             // Quick check by leading character.
+}

@@ -23,12 +23,13 @@ function newRound() {                           // Prepare and deal a brand-new 
   hiddenImg.src = "assets/cards/BACK.png";      // Show the card back image.
   hiddenImg.alt = "Face-down card";             // Accessible description for the hidden card.
 
-  
-  // 3) Reset round state (example)
-  dealerSum = 0;
-  yourSum = 0;
-  dealerAceCount = 0;
-  yourAceCount = 0;
+  // Reset state
+  dealerSum = yourSum = 0;                      // Zero both totals.
+  dealerAceCount = yourAceCount = 0;            // Zero ace counts.
+  canHit = true; gameOver = false;              // Allow hits; mark round as active.
+  playerNatural21 = false;                      // Reset natural blackjack flag.
+  dealerCardCount = 0; playerCardCount = 0;     // Reset card counters.
+
 
   // 4) Ensure deck exists (example)
   if (!deck || deck.length < 15) {

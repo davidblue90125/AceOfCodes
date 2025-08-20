@@ -84,3 +84,10 @@ function buildDeck() {                             // Create a standard 52-card 
     for (const v of values)                       // …for each rank…
       deck.push(`${v}-${s}`);                     // …push a code like "Q-H".
 }
+
+function shuffleDeck() {                           // Shuffle deck in place using Fisher–Yates.
+  for (let i = deck.length - 1; i > 0; i--) {     // Walk from end to start…
+    const j = Math.floor(Math.random() * (i + 1)); // Pick a random index ≤ i.
+    [deck[i], deck[j]] = [deck[j], deck[i]];      // Swap elements at i and j.
+  }
+}

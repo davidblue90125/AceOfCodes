@@ -26,6 +26,8 @@ const hiddenImg = $("#hidden");               // <img> element for dealer’s fa
 /* ---------- Init ---------- */
 window.addEventListener("load", newRound);
 resetBtn.addEventListener("click", newRound);
+stayBtn.addEventListener("click", onStay);
+hitBtn.addEventListener("click", onHit);
 
 
 /* ---------- Round flow ---------- */
@@ -71,4 +73,20 @@ function newRound() {                           // Prepare and deal a brand-new 
   for (let i = 0; i < 2; i++) drawToPlayer();   // Deal two cards to the player (rendered).
 
   
+}
+
+// Keyboard shortcuts: H / S / R
+  document.addEventListener("keydown", (e) => { // Global key handler for accessibility/speed.
+    const k = e.key.toLowerCase();              // Normalize key to lowercase.
+    if (k === "h" && !hitBtn.disabled) onHit(); // H acts like clicking Hit (if enabled).
+    if (k === "s" && !stayBtn.disabled) onStay(); // S acts like clicking Stay (if enabled).
+    if (k === "r") newRound();                  // R always starts a new round.
+  });
+
+function onHit() {
+alert ("hit me"); //placeholder text. Nadia's code to go here
+}
+
+function onStay() {
+alert ("no more cards"); //placeholder text. Tyler's code to go here
 }

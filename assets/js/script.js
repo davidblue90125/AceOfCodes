@@ -70,3 +70,14 @@ function newRound() {                           // Prepare and deal a brand-new 
 
   
 }
+
+/* ---------- Helpers ---------- */
+function drawToPlayer() {                         // Draw a single card for the player and render it.
+  const card = deck.pop();                        // Take the top card from the deck.
+  yourSum += getValue(card);                      // Add its nominal value to player total.
+  yourAceCount += checkAce(card);                 // Track aces for later reduction.
+  playerCardCount++;                              // Increment player’s card count.
+  yourCardsEl.appendChild(                        // Render a card image into the player area.
+    makeCardImg(card, "Your card")
+  );
+}

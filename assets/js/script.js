@@ -1,5 +1,11 @@
 /* ---------- State ---------- */
 let hidden;           // dealer's hidden card code, e.g. "A-S"
+let dealerSum = 0, yourSum = 0;
+let dealerAceCount = 0, yourAceCount = 0;
+let deck = [];
+let canHit = true, gameOver = false;
+let playerNatural21 = false;
+let dealerCardCount = 0, playerCardCount = 0;
 
 /* ---------- DOM ---------- */
 const $ = (s) => document.querySelector(s);   // Helper: short selector function.

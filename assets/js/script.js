@@ -91,3 +91,9 @@ function shuffleDeck() {                           // Shuffle deck in place usin
     [deck[i], deck[j]] = [deck[j], deck[i]];      // Swap elements at i and j.
   }
 }
+
+function getValue(card) {                          // Nominal numeric value (Ace=11, face=10).
+  const value = card.split("-")[0];                // Extract rank part.
+  if (isNaN(value)) return value === "A" ? 11 : 10; // A=11; J/Q/K=10.
+  return parseInt(value, 10);                      // Number cards 2–10 parse to their int value.
+}

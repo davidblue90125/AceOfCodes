@@ -11,3 +11,9 @@
   border-radius: 0.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
+
+/* Dark gradient panels */
+.card.bg-gradient-dark {
+  background: linear-gradient(160deg, var(--panel), #0b1020);
+  border: none;
+}

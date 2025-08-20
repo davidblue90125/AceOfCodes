@@ -92,6 +92,13 @@ function buildDeck() {                             // Create a standard 52-card 
       deck.push(`${v}-${s}`);                     // …push a code like "Q-H".
 }
 
+function shuffleDeck() {
+  for (let i = deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+}
+
 function makeCardImg(card, labelPrefix = "Card") { // Create an <img> element for a card.
   const img = document.createElement("img");      // Make an image element.
   img.src = getCardImageSrc(card);                // Point to the correct PNG file.

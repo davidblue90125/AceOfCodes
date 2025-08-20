@@ -13,6 +13,7 @@ window.addEventListener("load", newRound);
 resetBtn.addEventListener("click", newRound);
 
 
+/* ---------- Round flow ---------- */
 function newRound() {
   // 1) Clear UI
   dealerCardsEl.innerHTML = "";     // remove dealer’s previous open cards
@@ -39,3 +40,4 @@ function newRound() {
   hidden = deck.pop();
   dealerSum += getValue(hidden);
   dealerAceCount += checkAce(hidden); 
+

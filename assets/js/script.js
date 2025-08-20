@@ -91,3 +91,12 @@ function buildDeck() {                             // Create a standard 52-card 
     for (const v of values)                       // …for each rank…
       deck.push(`${v}-${s}`);                     // …push a code like "Q-H".
 }
+
+function makeCardImg(card, labelPrefix = "Card") { // Create an <img> element for a card.
+  const img = document.createElement("img");      // Make an image element.
+  img.src = getCardImageSrc(card);                // Point to the correct PNG file.
+  img.alt = `${labelPrefix}: ${cardAlt(card)}`;   // Accessible alt text (e.g., “Your card: Ace of Spades”).
+  img.decoding = "async";                         // Hint: decode asynchronously for performance.
+  img.loading = "eager";                          // Load immediately so cards appear promptly.
+  return img;                                     // Return the ready image element.
+}

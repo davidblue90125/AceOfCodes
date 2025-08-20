@@ -56,4 +56,13 @@ function newRound() {                           // Prepare and deal a brand-new 
   dealerAceCount += checkAce(hidden);           // Track if the card is an Ace.
   dealerCardCount++;                            // Count a dealer card dealt.
 
-
+  // Dealer draws face-up to 17+
+  while (reduceAce(dealerSum, dealerAceCount) < 17) { // While best total is below 17…
+    const card = deck.pop();                    // Draw a face-up card.
+    dealerSum += getValue(card);                // Add its nominal value.
+    dealerAceCount += checkAce(card);           // Track aces for later reduction.
+    dealerCardCount++;                          // Count another dealer card.
+    dealerCardsEl.appendChild(                   // Render the face-up card in the dealer’s area.
+      makeCardImg(card, "Dealer card")
+    );
+  }

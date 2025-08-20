@@ -1,9 +1,24 @@
 /* ---------- DOM ---------- */
 const $ = (s) => document.querySelector(s);   // Helper: short selector function.
+
+const dealerSumEl = $("#dealer-sum");         // <span> that shows dealer’s total (revealed at round end).
+const yourSumEl = $("#your-sum");             // <span> that shows player’s total (updates live).
+
 const dealerCardsEl = $("#dealer-cards");     // Container for dealer’s visible cards.
 const yourCardsEl = $("#your-cards");         // Container for player’s cards.
+
+const resultsEl = $("#results");              // <p> that displays outcome text (aria-live polite).
+const winsEl = $("#wins");                    // <span> wins counter in tally line.
+const lossesEl = $("#losses");                // <span> losses counter in tally line.
+const tiesEl = $("#ties");                    // <span> ties counter in tally line.
+
+const hitBtn = $("#hit");                     // Hit button element.
+const stayBtn = $("#stay");                   // Stay button element.
 const resetBtn = $("#reset");                 // Reset round button element.
+const resetScoreBtn = $("#resetScore");       // Reset scoreboard button element.
+
 const hiddenImg = $("#hidden");               // <img> element for dealer’s face-down card back.
+
 
 // --- Round state you’ll use here ---
 let hidden;           // dealer's hidden card code, e.g. "A-S"

@@ -1,11 +1,6 @@
 /* ---------- State ---------- */
 let hidden;           // dealer's hidden card code, e.g. "A-S"
-let dealerSum = 0, yourSum = 0;
-let dealerAceCount = 0, yourAceCount = 0;
-let deck = [];
-let canHit = true, gameOver = false;
-let playerNatural21 = false;
-let dealerCardCount = 0, playerCardCount = 0;
+
 
 /* ---------- DOM ---------- */
 const $ = (s) => document.querySelector(s);   // Helper: short selector function.
@@ -61,17 +56,6 @@ function newRound() {                           // Prepare and deal a brand-new 
   dealerSum += getValue(hidden);                // Add its nominal value (Ace=11 for now).
   dealerAceCount += checkAce(hidden);           // Track if the card is an Ace.
   dealerCardCount++;                            // Count a dealer card dealt.
-
-  // Dealer draws face-up to 17+
-  while (reduceAce(dealerSum, dealerAceCount) < 17) { // While best total is below 17…
-    const card = deck.pop();                    // Draw a face-up card.
-    dealerSum += getValue(card);                // Add its nominal value.
-    dealerAceCount += checkAce(card);           // Track aces for later reduction.
-    dealerCardCount++;                          // Count another dealer card.
-    dealerCardsEl.appendChild(                   // Render the face-up card in the dealer’s area.
-      makeCardImg(card, "Dealer card")
-    );
-  }
 
   // Player initial two
   for (let i = 0; i < 2; i++) drawToPlayer();   // Deal two cards to the player (rendered).

@@ -14,15 +14,15 @@ resetBtn.addEventListener("click", newRound);
 
 
 /* ---------- Round flow ---------- */
-function newRound() {
-  // 1) Clear UI
-  dealerCardsEl.innerHTML = "";     // remove dealer’s previous open cards
-  yourCardsEl.innerHTML = "";       // remove player cards
+function newRound() {                           // Prepare and deal a brand-new round.
+  // Reset UI
+  resultsEl.textContent = "";                   // Clear last round’s outcome text.
+  dealerCardsEl.innerHTML = "";                 // Remove dealer’s visible cards.
+  yourCardsEl.innerHTML = "";                   // Remove player cards.
+  dealerCardsEl.appendChild(hiddenImg);         // Put the face-down placeholder back into dealer area.
+  hiddenImg.src = "assets/cards/BACK.png";      // Show the card back image.
+  hiddenImg.alt = "Face-down card";             // Accessible description for the hidden card.
 
-  // 2) Reinsert the hidden back-of-card image
-  dealerCardsEl.appendChild(hiddenImg);
-  hiddenImg.src = "assets/cards/BACK.png"; // back image path
-  hiddenImg.alt = "Face-down card";
   
   // 3) Reset round state (example)
   dealerSum = 0;

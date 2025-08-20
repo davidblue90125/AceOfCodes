@@ -99,6 +99,10 @@ function shuffleDeck() {
   }
 }
 
+function getCardImageSrc(card) {
+  return `assets/cards/${card}.png`;
+}
+
 function makeCardImg(card, labelPrefix = "Card") { // Create an <img> element for a card.
   const img = document.createElement("img");      // Make an image element.
   img.src = getCardImageSrc(card);                // Point to the correct PNG file.

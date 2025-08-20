@@ -107,3 +107,9 @@ function cardAlt(card) {                           // Build a human-readable nam
   const valueName = isNaN(v) ? (v === "A" ? "Ace" : v === "K" ? "King" : v === "Q" ? "Queen" : "Jack") : v; // Rank mapping.
   return `${valueName} of ${suitName}`;            // e.g., "Queen of Hearts".
 }
+
+function getValue(card) {                          // Nominal numeric value (Ace=11, face=10).
+  const value = card.split("-")[0];                // Extract rank part.
+  if (isNaN(value)) return value === "A" ? 11 : 10; // A=11; J/Q/K=10.
+  return parseInt(value, 10);                      // Number cards 2–10 parse to their int value.
+}

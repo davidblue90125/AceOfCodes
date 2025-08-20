@@ -100,3 +100,10 @@ function makeCardImg(card, labelPrefix = "Card") { // Create an <img> element fo
   img.loading = "eager";                          // Load immediately so cards appear promptly.
   return img;                                     // Return the ready image element.
 }
+
+function cardAlt(card) {                           // Build a human-readable name for a card code.
+  const [v, s] = card.split("-");                  // Split "Q-H" → ["Q","H"].
+  const suitName = { C: "Clubs", D: "Diamonds", H: "Hearts", S: "Spades" }[s] || s; // Suit mapping.
+  const valueName = isNaN(v) ? (v === "A" ? "Ace" : v === "K" ? "King" : v === "Q" ? "Queen" : "Jack") : v; // Rank mapping.
+  return `${valueName} of ${suitName}`;            // e.g., "Queen of Hearts".
+}

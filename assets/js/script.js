@@ -1,3 +1,6 @@
+/* ---------- State ---------- */
+let hidden;           // dealer's hidden card code, e.g. "A-S"
+``
 /* ---------- DOM ---------- */
 const $ = (s) => document.querySelector(s);   // Helper: short selector function.
 

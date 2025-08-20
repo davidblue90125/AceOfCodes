@@ -5,6 +5,9 @@ const yourCardsEl = $("#your-cards");         // Container for player’s cards.
 const resetBtn = $("#reset");                 // Reset round button element.
 const hiddenImg = $("#hidden");               // <img> element for dealer’s face-down card back.
 
+// --- Round state you’ll use here ---
+let hidden;           // dealer's hidden card code, e.g. "A-S"
+
 /* ---------- Init ---------- */
 window.addEventListener("load", () => {        // Run after the page finishes loading.
   newRound();                                   // Deal the first round.

@@ -9,8 +9,5 @@ const hiddenImg = $("#hidden");               // <img> element for dealer’s fa
 let hidden;           // dealer's hidden card code, e.g. "A-S"
 
 /* ---------- Init ---------- */
-window.addEventListener("load", () => {        // Run after the page finishes loading.
-  newRound();                                   // Deal the first round.
-
-resetBtn.addEventListener("click", newRound); // Clicking Reset starts a fresh round.
-})
+window.addEventListener("load", newRound);
+resetBtn.addEventListener("click", newRound);

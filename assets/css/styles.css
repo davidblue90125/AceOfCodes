@@ -2,3 +2,12 @@
   --panel: #11162b;
 }
 
+/* Card images inside flex containers */
+#dealer-cards img,
+#your-cards img {
+  height: clamp(110px, 18vw, 175px); /* responsive card size */
+  width: auto;
+  aspect-ratio: 5 / 7;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}

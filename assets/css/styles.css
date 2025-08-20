@@ -17,3 +17,15 @@
   background: linear-gradient(160deg, var(--panel), #0b1020);
   border: none;
 }
+
+/* Skip link visible on focus */
+.visually-hidden-focusable:active,
+.visually-hidden-focusable:focus {
+  position: static !important;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  white-space: normal;
+  overflow: visible;
+}
